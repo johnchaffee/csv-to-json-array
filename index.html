@@ -37,42 +37,42 @@
         // Once each of the header elements is processed, post each object to lowdb
         // { number: "2068163515", first: "Bob", last: "Jones" }
 
-        // FETCH
-        const apiUrl = "https://johnchaffee.ngrok.io/contacts";
-        var bodyParams = JSON.stringify({ 
-          number: el.number,
-          first: el.first,
-          last: el.last,
-         });
-        console.log("BODYPARAMS:");
-        console.log(bodyParams);
-        const requestOptions = {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            // Authorization: apiKey,
-          },
-          body: bodyParams,
-          redirect: "follow",
-        };
-        fetch(apiUrl, requestOptions)
-          .then((response) => response.json())
-          .then((result) => {
-            console.log("SUCCESS");
-            console.log("result: " + JSON.stringify(result, undefined, 2));
-          })
-          .catch((error) => {
-            console.log("CATCH");
-            console.log(
-              ".catch JSON.stringify(error, undefined, 2): \n" +
-                JSON.stringify(error, undefined, 2)
-            );
-            console.log("error", error);
-          })
-          .finally(() => {
-            console.log("FINALLY");
-          });
-        // END FETCH
+        // // FETCH
+        // const apiUrl = "https://johnchaffee.ngrok.io/contacts";
+        // var bodyParams = JSON.stringify({ 
+        //   number: el.number,
+        //   first: el.first,
+        //   last: el.last,
+        //  });
+        // console.log("BODYPARAMS:");
+        // console.log(bodyParams);
+        // const requestOptions = {
+        //   method: "POST",
+        //   headers: {
+        //     "Content-Type": "application/json",
+        //     // Authorization: apiKey,
+        //   },
+        //   body: bodyParams,
+        //   redirect: "follow",
+        // };
+        // fetch(apiUrl, requestOptions)
+        //   .then((response) => response.json())
+        //   .then((result) => {
+        //     console.log("SUCCESS");
+        //     console.log("result: " + JSON.stringify(result, undefined, 2));
+        //   })
+        //   .catch((error) => {
+        //     console.log("CATCH");
+        //     console.log(
+        //       ".catch JSON.stringify(error, undefined, 2): \n" +
+        //         JSON.stringify(error, undefined, 2)
+        //     );
+        //     console.log("error", error);
+        //   })
+        //   .finally(() => {
+        //     console.log("FINALLY");
+        //   });
+        // // END FETCH
 
         // then return the entire row object to the el array
         return el;
@@ -101,7 +101,6 @@
             console.log(item.last);
           }
         });
-
         document.write(JSON.stringify(data));
       };
 
